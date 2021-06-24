@@ -63,17 +63,6 @@ public class CSVUtilTest {
         assert listFilter.block().size() == 322;
     }
 
-    /*
-    @Test
-    void reactive_nacionalidades() {
-        List<Player> list = CsvUtilFile.getPlayers();
-        Flux<String> listFlux = Flux.fromStream(list.parallelStream().map(player -> {
-            return player.national;
-        })).cache();
-        listFlux = listFlux.distinct();
-        System.out.println(listFlux.blockLast());
-    }
-     */
 
     @Test
     void reactive_nacionalidades() {
@@ -87,18 +76,6 @@ public class CSVUtilTest {
 
     }
 
-    /*
-    @Test
-    void reactive_ranking() {
-        List<Player> list = CsvUtilFile.getPlayers();
-        Flux<Player> listFlux = Flux.fromStream(list.parallelStream())
-                .flatMap(player -> listFlux
-                        .filter(player -> player.national == "Argentina"));;
-        Mono<List<Player>> prueba = listFlux.collectList();
-        System.out.println(prueba.block());
-    }
-
-     */
     @Test
     void reactive_rank_per_nationality() {
         List<Player> list = CsvUtilFile.getPlayers();
