@@ -88,4 +88,10 @@ public class Player {
     public void setClub(String club) {
         this.club = club;
     }
+
+    public int compareWinners( Player b) {
+        return this.winners > b.winners ? -1
+                : this.winners < b.winners ? 1
+                : 0;
+    }
 }
